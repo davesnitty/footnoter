@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Footnoter Test</title>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+<style type='text/css'>
+body{
+	font-family: sans-serif;
+}
+#footnotes{
+	border: 1px dashed #999999;
+	position: absolute;
+	bottom: 10px;
+	padding: 5px;
+	font-size: 60%;
+	width: 90%;
+}
+.fnoteref{
+	font-size: 60%;
+	vertical-align: top;
+	font-weight: bold;
+	padding: 2px;
+	text-decoration: underline;
+}
+.ftip{
+	font-size: 60%;
+	border: 1px solid #666666;
+	background-color: #fdfd66;
+	padding: 2px;
+}
+</style>
+</head>
+<body>
+
+<p>
+Here is a paragraph of text describing a dog<fnote>a dog is a furry animal</fnote>.  Another animal is a lizard<fnote>which moves by slithering</fnote>.
+</p>
+
+
+
+<script type='text/javascript'>
+$(document).ready(function(){
+	//create a footnote section at the bottom of the page
+	
+	var footnum = 1;
+
+	//select and process each "fnote" tag
+	$('fnote').each(function(){
+		var message = $(this).html();
+		var newnote = "<span class='footnote'><a name='footnote_"+footnum+"'></a>"+footnum+": "+message+"</span>";
+		$('#footnotes').html($('#footnotes').html()+newnote+"<br />");
+		
+		var newref = "<a href='#footnote_"+footnum+"'><span class='fnoteref' id='fref"+footnum+"'>"+footnum+"</span></a>";
+		
+		$(this).after(newref);
+		$(this).remove();
+		
+		$('#fref'+footnum).hover(function(e){
+			var ftip = "<div class='ftip' id='ftip"+footnum+"'>"+message+"</div>";
+			$('body').append(ftip);
+			$('#ftip'+footnum).css({position: 'absolute', left: e.pageX+15, top: e.pageY+15});
+		},function(){
+			$('#ftip'+footnum).remove();
+		} );
+		
+		footnum++;
+	});
+});
+</script>
+
+<div id='footnotes'>
+</div>
+
+</body>
+</html>
