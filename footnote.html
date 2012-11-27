@@ -57,7 +57,7 @@ $(document).ready(function(){
 		$('#fref'+footnum).hover(function(e){
 			var ftip = "<div class='ftip' id='ftip"+footnum+"'>"+message+"</div>";
 			$('body').append(ftip);
-			$('#ftip'+footnum).css({position: 'absolute', left: e.pageX+15, top: e.pageY+15});
+			$('#ftip'+footnum).css({position: 'absolute', left: e.pageX+14, top: e.pageY+14});
 		},function(){
 			$('#ftip'+footnum).remove();
 		} );
