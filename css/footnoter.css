@@ -1,0 +1,13 @@
+.fnoteref{
+	font-size: 60%;
+	vertical-align: top;
+	font-weight: bold;
+	padding: 2px;
+	text-decoration: underline;
+}
+.ftip{
+	font-size: 60%;
+	border: 1px solid #666666;
+	background-color: #fdfd9c;
+	padding: 2px;
+}
