@@ -1,9 +1,5 @@
 var footnoter = function(){
 
-	//initialize configs
-	this.footerid = '';
-	this.tagid = '';
-
 	this.run = function(){
 
 		var footnum = 1;
