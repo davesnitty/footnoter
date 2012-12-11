@@ -17,10 +17,10 @@ To use footnoter, you will need to download the "js/footnoter.js" and "css/footn
 Now that you've referenced the footnoter.js source, you can pepper your HTML with footnotes and not need to worry about numbering at all.  For example, let's write a paragraph mentioning animals with footnotes listing their latin names:
 
 		<p>
-			Animals native to New York state include the Black Bear<fn>Ursus americanus</fn> and Wild Turkey<fn>Meleagris gallopavo</fn>
+			Animals native to New York state include the Black Bear<span class='fn'>Ursus americanus</span> and Wild Turkey<span class='fn'>Meleagris gallopavo</span>
 		</p>
 		
-As you can see, we've chosen the "fn" tag to include our footnote text inline.  To activate the footnotes, we need just a few more steps:
+As you can see, we've chosen the "fn" class to include our footnote text inline.  To activate the footnotes, we need just a few more steps:
 
 1. Put a &lt;div&gt; somewhere on your page where the footnotes will appear.  For instance:
 
@@ -32,7 +32,7 @@ As you can see, we've chosen the "fn" tag to include our footnote text inline.  
 		$(document).ready(function(){;
 			var fnote_options = {};
 			fnote_options.footer_id = 'footnotes'; 	//tells it where to put your footnotes
-			fnote_options.tagname = 'fn';			//tells it the tag name you chose for your inline footnotes
+			fnote_options.fnclassname = 'fn';			//tells it the class name you chose for your inline footnotes
 			footnoter(fnote_options);
 		});
 		</script>
@@ -44,7 +44,7 @@ The "fnote_options" object offers several options for customizing the behavior o
 <table class='nicetable'>
 <tr><th>Option</th><th>Description</th><th>Example Usage</th></tr>
 <tr><td>footer_id</td><td>Tells the script where to put your footnotes.  Should be the id of a div.</td><td>fnote_options.footer_id = 'footnotes';</td></tr>
-<tr><td>tagname</td><td>Tells the script the tag name you used for your inline footnotes.</td><td>fnote_options.tagname = 'fn';</td></tr>
+<tr><td>fnclassname</td><td>Tells the script the class name you used for your inline footnotes.</td><td>fnote_options.fnclassname = 'fn';</td></tr>
 <tr><td>hovers</td><td>Enables or disables the hover behavior on footnotes for tooltips (default = true)</td><td>fnote_options.hovers = false;</td></tr>
 <tr><td>offsetX</td><td>The horizontal offset from mouse pointer, in pixels, of the tooltip that appears when hovering over a footnote (default = 14)</td><td>fnote_options.offsetX = 14;</td></tr>
 <tr><td>offsetY</td><td>The vertical offset from mouse pointer, in pixels, of the tooltip that appears when hovering over a footnote (default = 14)</td><td>fnote_options.offsetY = 14;</td></tr>
@@ -60,6 +60,6 @@ The footnoter.js script creates elements with 2 different classes, "fnoteref" an
 
 Browser Compatability
 -----------------------
-Tested on Firefox and Chrome, still debugging on IE
+Tested on the latest versions of Firefox and Chrome, as well as IE9
 
 P.S.  Although I've been coding for many years, this is my 1st project on GitHub.  Thanks for exploring!
