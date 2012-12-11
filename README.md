@@ -41,7 +41,6 @@ Customization
 -----------------------
 The "fnote_options" object offers several options for customizing the behavior of footnoter.js:
 
-<style type='text/css'> .nicetable {border-collapse:collapse;} .nicetable td{ text-align: left; padding-right: 5px; border: 1px solid #333333; } .nicetable th{text-align: left; font-weight: bold ;border: 1px solid #333333;}</style>
 <table class='nicetable'>
 <tr><th>Option</th><th>Description</th><th>Example Usage</th></tr>
 <tr><td>footer_id</td><td>Tells the script where to put your footnotes.  Should be the id of a div.</td><td>fnote_options.footer_id = 'footnotes';</td></tr>

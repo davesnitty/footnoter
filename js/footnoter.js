@@ -2,15 +2,16 @@ var footnoter = function(opts){
 
 	//initialize configs
 	var footerid = (opts['footer_id']) ? (opts['footer_id']) : 'footnotes';
-	var fntag = (opts['tagname']) ? (opts['tagname']) : 'fnote';
+	var fnclass = (opts['fnclassname']) ? (opts['fnclassname']) : 'fnote';
 	var offsetX = (opts['offsetX']) ? (opts['offsetX'])*1 : 14;
 	var offsetY = (opts['offsetY']) ? (opts['offsetY'])*1 : 14;
 	var hovers = (opts['hovers']===true || opts['hovers']===false) ? (opts['hovers']) : true;
-
+	
 	var footnum = 1;
 
 	//select and process each "fnote" tag
-	$(fntag).each(function(){
+	$('span.'+fnclass).each(function(){
+
 		var message = $(this).html();
 		var newnote = "<span class='footnote'>"+footnum+": "+message+"</span>";
 

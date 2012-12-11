@@ -22,15 +22,15 @@ body{
 
 <h1>footnoter.js Example</h1>
 
-<p>Below, you will see text with various footnotes. The footnotes were specified inline in the HTML using the &quot;&lt;fnote&gt;&quot; 
+<p>Below, you will see text with various footnotes. The footnotes were specified inline in the HTML using the &quot;&lt;span class='fnote'&gt;&quot; 
 tag, and the footnoter.js script took care of the rest</p>
 
 <p>
-Hello, world!<fnote><a href='http://en.wikipedia.org/wiki/Hello_world_program'>Hello World Program (wikipedia)</a></fnote>
+Hello, world!<span class='fnote'><a href='http://en.wikipedia.org/wiki/Hello_world_program'>Hello World Program (wikipedia)</a></span>
 </p>
 
 <p>
-Here is a paragraph of text describing various animals: a dog<fnote>a dog is a furry animal</fnote>.  Another animal is a lizard<fnote>which moves by slithering</fnote>.
+Here is a paragraph of text describing various animals: a dog<span class='fnote'>a dog is a furry animal</span>.  Another animal is a lizard<span class='fnote'>which moves by slithering</span>.
 </p>
 
 <p>Check out the project page on <a href='https://github.com/davesnitty/footnoter'>GitHub</a></p>
@@ -40,11 +40,13 @@ Here is a paragraph of text describing various animals: a dog<fnote>a dog is a f
 <script type='text/javascript'>
 $(document).ready(function(){;
 	var fnote_options = {};
+	/*
 	fnote_options.footer_id = 'footnotes';
-	fnote_options.tagname = 'fnote';
+	fnote_options.fnclassname = 'fnote';
 	fnote_options.offsetX = 15;
 	fnote_options.offsetY = 15;
 	fnote_options.hovers = true;
+	*/
 	
 	footnoter(fnote_options);
 
